@@ -1,0 +1,11 @@
+<aura:component>
+    <lightning:card>
+        <aura:set attribute="title">
+            <p>Child Auditor</p>
+        </aura:set>
+        <aura:set attribute="footer">
+            
+            <lightning:button variant="brand" label="Brand action" title="Brand action" onclick="{! c.refresh }" />
+        </aura:set>
+    </lightning:card>
+</aura:component>	
