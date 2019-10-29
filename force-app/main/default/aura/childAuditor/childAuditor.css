@@ -1,2 +1,8 @@
 .THIS {
 }
+.THIS .list {
+    text-align: left;
+}
+.THIS .button {
+    text-align: right;
+}
