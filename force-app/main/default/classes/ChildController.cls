@@ -1,7 +1,7 @@
 public with sharing class ChildController {
     
     @AuraEnabled
-    public static string methodName(){
+    public static List<List<SObject>> getAllRelatedChildren(){
         
     }
 
