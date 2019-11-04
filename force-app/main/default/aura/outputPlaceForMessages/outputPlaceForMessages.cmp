@@ -1,0 +1,14 @@
+<aura:component controller="currentUserProfile" implements="force:hasRecordId,flexipage:availableForAllPageTypes" access="global">
+    <aura:handler name="showComment" event="c:showComment" action="{!c.checkAvatar}"/>
+    <aura:attribute type="user" name="currentUser" />
+    <aura:attribute type="String" name="message" />
+    <div>
+        <lightning:avatar src="{!v.currentUser.SmallPhotoUrl}"/>
+        <div style="display: inline-block;position: absolute;padding: 0.5% 0 0 1%;">
+            <p>{!v.currentUser.Name}</p>
+        </div>
+        <div>
+            <p>{!v.message}</p>
+        </div>
+    </div>  
+</aura:component>	
