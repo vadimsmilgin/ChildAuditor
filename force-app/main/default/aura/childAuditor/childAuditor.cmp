@@ -1,11 +1,19 @@
-<aura:component>
+<aura:component controller="ChildController" implements="force:hasRecordId,flexipage:availableForAllPageTypes" access="global" >
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}" access="global" />
+    <aura:attribute name="childs" type="List" />
     <lightning:card>
         <aura:set attribute="title">
             <p>Child Auditor</p>
         </aura:set>
         <aura:set attribute="footer">
-            
-            <lightning:button variant="brand" label="Brand action" title="Brand action" onclick="{! c.refresh }" />
+            <aura:iteration items="{!v.childs}" var="child" indexVar="key">
+                <div style="text-align: left; padding-left: 5%;">
+                    {!key + 1}.{!child.key} -- {!child.value}<br/>
+                </div>    
+            </aura:iteration>
+            <div class="button">
+                <lightning:button variant="brand" label="Refresh" title="Refresh" onclick="{! c.doInit }" />
+            </div>
         </aura:set>
     </lightning:card>
 </aura:component>	
