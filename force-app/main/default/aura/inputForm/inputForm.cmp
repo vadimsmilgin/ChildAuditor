@@ -1,7 +1,8 @@
-<aura:component implements="force:hasRecordId,flexipage:availableForAllPageTypes">
+ <aura:component implements="force:hasRecordId,flexipage:availableForAllPageTypes">
     <aura:registerEvent name="showComment" type="c:showComment"/>
+    <aura:attribute type="String" name="message"/>
     <div class="row">
-        <lightning:textarea name="message" class="tallTextArea" placeholder="type your message"/>   
+        <lightning:textarea name="message" class="tallTextArea" placeholder="type your message" value="{!v.message}"/>   
     </div>
     <lightning:button variant="brand" label="Post" title="Post" onclick="{! c.postMessage }" />
 </aura:component>	

@@ -2,6 +2,7 @@
     <aura:handler name="showComment" event="c:showComment" action="{!c.checkAvatar}"/>
     <aura:attribute type="user" name="currentUser" />
     <aura:attribute type="String" name="message" />
+    <c:inputForm/>
     <div>
         <lightning:avatar src="{!v.currentUser.SmallPhotoUrl}"/>
         <div style="display: inline-block;position: absolute;padding: 0.5% 0 0 1%;">
