@@ -1,2 +1,13 @@
 .THIS {
 }
+.THIS .comment {
+    padding-left: 3%;
+}
+.THIS .title {
+    text-align: left;
+}
+.THIS .message {
+    text-align: left;
+    padding-top: 2%;
+    font-size: 20px;
+}
