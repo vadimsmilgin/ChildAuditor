@@ -1,29 +1,25 @@
 <aura:component controller="currentUserProfile" implements="force:hasRecordId,flexipage:availableForAllPageTypes" access="global">
+    <aura:registerEvent name="refreshChat" type="c:refreshChat"/>
+    <aura:handler name="refreshChat1" event="c:refreshChat" action="{!c.doInit}" access="global"/>
     <aura:handler name="showComment" event="c:showComment" action="{!c.addComment}" access="global"/>
     <aura:handler name="init" action="{!c.doInit}" value="{!this}" access="global"/>
-    <aura:attribute name="chat" type="List" />
-
+    <aura:attribute name="comments" type="MyChatter__c[]" />
+    
     <lightning:card>
         <aura:set attribute="title">
-            <p>My Chatter</p>
+                <p>My Chatter</p>
         </aura:set>
         <aura:set attribute="footer">
-            <c:inputForm/>
-
-            <aura:iteration items="{!v.chat}" var="chat">
-                <div class="comment">
-                   <div class="title" style="text-align: left;">
-                        <lightning:avatar src="{!chat.User__r.SmallPhotoUrl}"/>
-                        <div style="display: inline-block;position: absolute;padding: 0.5% 0 0 1%;">
-                            <p>{!chat.User__r.Name}</p>
-                            <p class="slds-text-title"><lightning:relativeDateTime value="{!chat.DateCreated__c}"/></p>
-                        </div>
-                    </div>
-                    <div class="message">
-                        <p>{!chat.Comment__c}</p>
-                    </div>
-                </div> 
-            </aura:iteration> 
+            <lightning:tabset selectedTabId="post">
+                <lightning:tab label="Post" id="post">
+                        <lightning:card>
+                            <c:inputForm/>
+                            <aura:iteration items="{!v.comments}" var="comment">
+                                <c:comment commentary="{!comment}"/>
+                            </aura:iteration> 
+                        </lightning:card>    
+                </lightning:tab>
+            </lightning:tabset>
         </aura:set>
-    </lightning:card>    
+    </lightning:card>
 </aura:component>	

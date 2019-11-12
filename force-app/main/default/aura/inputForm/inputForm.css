@@ -1,21 +1,13 @@
 .THIS {
+    padding-bottom: 5%;
 }
-.THIS .button {
-    text-align: right;
+.THIS .textAreaDiv textarea {
+    height: 8em;
 }
-.THIS .tallTextArea textarea {
-    height: 5rem;
-    width: 14rem;
-}
-.THIS .textAreaDiv {
-    display: inline-block;
-    text-align: left;
-    position: relative;
-    left: -5em;
-}
-.THIS .buttonDiv {
-    display: inline-block;
-    position: relative;
-    top: -3em;
-    left: 1em;
-}
+
+
+
+
+
+
+

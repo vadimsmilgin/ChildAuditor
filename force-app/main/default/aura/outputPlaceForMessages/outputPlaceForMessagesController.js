@@ -9,13 +9,7 @@
             var state = response.getState();
             if (state === "SUCCESS") {
                 var conts = response.getReturnValue();
-                console.log(conts);
-                var dateForMessages = [];
-                for(var i in conts) {
-                    dateForMessages.push({value: conts[i].DateCreated__c});                   
-                }
-                console.log(dateForMessages);
-                component.set("v.chat", conts);
+                component.set("v.comments", conts);
             }
         });
         $A.enqueueAction(action);
@@ -33,7 +27,7 @@
             var state = response.getState();
             if (state === "SUCCESS") {
                 var conts = response.getReturnValue();
-                component.set("v.chat", conts);
+                component.set("v.comments", conts);
             }
         });
         $A.enqueueAction(action); 

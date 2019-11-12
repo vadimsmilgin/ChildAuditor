@@ -1,0 +1,17 @@
+<aura:component implements="force:hasRecordId,flexipage:availableForAllPageTypes">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="formatdate" type="Date"/>
+    <aura:attribute name="commentary" type="MyChatter__c"/>
+    <div class="comment">
+        <div class="title" style="text-align: left;">
+             <lightning:avatar src="{!v.commentary.User__r.SmallPhotoUrl}"/>
+             <div style="display: inline-block;position: absolute;padding: 0.5% 0 0 1%;">
+                 <p>{!v.commentary.User__r.Name}</p>
+                 <p class="slds-text-title"><lightning:relativeDateTime value="{!v.formatdate}"/></p>
+             </div>
+         </div>
+         <div class="message">
+             <p>{!v.commentary.Comment__c}</p>
+         </div>
+     </div> 
+</aura:component>	
