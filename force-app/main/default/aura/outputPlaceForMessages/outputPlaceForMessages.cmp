@@ -1,6 +1,4 @@
 <aura:component controller="currentUserProfile" implements="force:hasRecordId,flexipage:availableForAllPageTypes" access="global">
-    <aura:registerEvent name="refreshChat" type="c:refreshChat"/>
-    <aura:handler name="refreshChat1" event="c:refreshChat" action="{!c.doInit}" access="global"/>
     <aura:handler name="showComment" event="c:showComment" action="{!c.addComment}" access="global"/>
     <aura:handler name="init" action="{!c.doInit}" value="{!this}" access="global"/>
     <aura:attribute name="comments" type="MyChatter__c[]" />

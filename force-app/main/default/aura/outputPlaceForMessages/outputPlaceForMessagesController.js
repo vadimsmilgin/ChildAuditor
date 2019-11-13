@@ -1,18 +1,6 @@
 ({  
     doInit : function(component, event, helper) {
-        var action = component.get("c.getChat");
-        var recordId = component.get("v.recordId");
-
-        action.setParams({"recordId": recordId});
-
-        action.setCallback(this, function(response) {
-            var state = response.getState();
-            if (state === "SUCCESS") {
-                var conts = response.getReturnValue();
-                component.set("v.comments", conts);
-            }
-        });
-        $A.enqueueAction(action);
+        helper.pollApex(component, event, helper);
     },
 
     addComment : function(component, event, helper) {       
